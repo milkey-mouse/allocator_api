@@ -27,7 +27,7 @@ global_alloc! {
     pub struct Box<T: ?Sized, A: Alloc> {
         ptr: NonNull<T>,
         marker: PhantomData<T>,
-        pub(crate) a: A,
+        pub a: A,
     }
 }
 

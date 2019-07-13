@@ -13,7 +13,7 @@ pub struct Excess(pub NonNull<u8>, pub usize);
 
 pub use core::alloc::{Layout, LayoutErr};
 
-pub(crate) trait LayoutExt: Sized {
+pub trait LayoutExt: Sized {
     fn padding_needed_for(&self, align: usize) -> usize;
 
     fn repeat(&self, n: usize) -> Result<(Self, usize), LayoutErr>;
